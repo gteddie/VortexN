@@ -1,0 +1,31 @@
+1671934310787	Delete element
+1671938468528	Delete element
+1671938658751	Delete element
+1671960847860	Delete element
+1671960965257	Delete element
+1671961980237	Copy file
+1671963803974	Copy file
+1671978247461	Copy file
+1671980268881	Delete element
+1671980274710	Copy file
+1671983503069	Copy file
+1671983505058	Copy file
+1671983506776	Copy file
+1671989511183	Delete element
+1672000363685	Rename type 'EmpBean'
+1672000393518	Rename type 'EmpDao'
+1672000476756	Rename type 'SQLEmpDao'
+1672017225619	Rename type 'EmpService'
+1672017272640	Rename type 'EmpServiceImpl'
+1672048933975	Copy file
+1672048946203	Rename resource 'Usertable.jsp'
+1672049117460	Copy file
+1672064170961	Copy compilation unit
+1672108792202	Move 'index.jsp' to 'controlpanel'
+1672108808903	Delete elements
+1672108817542	Move 'userEdit.jsp' to 'controlpanel'
+1672108819250	Move 'userTable.jsp' to 'controlpanel'
+1672109070347	Rename type 'LoginFilter'
+1672109697646	Copy file
+1672109714061	Rename resource 'userTable.jsp'
+1672109727479	Rename resource 'userTable.js'

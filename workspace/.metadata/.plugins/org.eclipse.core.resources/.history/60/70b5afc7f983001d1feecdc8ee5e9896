@@ -1,0 +1,11 @@
+package bean;
+
+import java.io.Serializable;
+
+public class AdminBean implements Serializable {
+	private static final long serialVersionUID = 1L;
+	private int adminId;
+	private String name;
+	private String password;
+	
+}

@@ -1,0 +1,90 @@
+package service;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.naming.NamingException;
+
+import bean.UserBean;
+import dao.UserDaoImpl;
+import util.ConnectionFactory;
+
+public class UserServiceImpl implements UserService {
+
+	@Override
+	public List<UserBean> insertEmp(List<UserBean> empList) throws SQLException {
+		try (Connection conn = ConnectionFactory.getConnection();) {
+			UserDaoImpl dao = new UserDaoImpl(conn);
+			dao.insertEmp(empList);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw e;
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+		return empList;
+	}
+
+	@Override
+	public List<UserBean> deleteEmp(int[] empnos) throws SQLException {
+		List<UserBean> empList = null;
+		try (Connection conn = ConnectionFactory.getConnection();) {
+			UserDaoImpl dao = new UserDaoImpl(conn);
+			empList = dao.findEmpByNo(empnos);
+			dao.deleteEmpByNo(empnos);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw e;
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+		return empList;
+	}
+	
+
+	@Override
+	public List<UserBean> updateEmp(List<UserBean> empList) throws SQLException {
+		try (Connection conn = ConnectionFactory.getConnection();) {
+			UserDaoImpl dao = new UserDaoImpl(conn);
+			dao.updateEmp(empList);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw e;
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+		return empList;
+	}
+
+	@Override
+	public List<UserBean> findEmpByNo(int[] empnos) throws SQLException {
+		List<UserBean> empList = null;
+		try (Connection conn = ConnectionFactory.getConnection();) {
+			UserDaoImpl dao = new UserDaoImpl(conn);
+			empList = dao.findEmpByNo(empnos);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw e;
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+		return empList;
+	}
+
+	@Override
+	public List<UserBean> findAllEmp() throws SQLException {
+		List<UserBean> empList = null;
+		try (Connection conn = ConnectionFactory.getConnection();) {
+			UserDaoImpl dao = new UserDaoImpl(conn);
+			empList = dao.findAllEmp();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw e;
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+		return empList;
+	}
+
+}

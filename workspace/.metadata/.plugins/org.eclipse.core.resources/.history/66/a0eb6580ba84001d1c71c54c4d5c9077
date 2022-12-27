@@ -1,0 +1,14 @@
+package service;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import bean.UserBean;
+
+public interface EmpService {
+	List<UserBean> insertEmp(List<UserBean> empList) throws SQLException;
+	List<UserBean> deleteEmp(int[] empnos) throws SQLException;
+	List<UserBean> updateEmp(List<UserBean> empList) throws SQLException;
+	List<UserBean> findEmpByNo(int[] empnos) throws SQLException;
+	List<UserBean> findAllEmp() throws SQLException;
+}

@@ -1,0 +1,25 @@
+Vortex
+    User.User(user_id, username, password,gender,email, phone, registration_date)
+    Game.Game(game_id, name, type, release_date, intro, desc, hardware_requirement, adult, developer_id)
+    Game.Developer(developer_id, name, url)
+    Game.Media(media_id, resource, resource_type, game_id) 
+    User.Purchase(purchase_id, purchase_date, amount, game_id, user_id)
+    User.ShoppingCart(user_id, game_id, add_date, amount)
+    Game.ItemPrice(Item_id, name, price, discount, game_id)
+    Game.Tag(tag_id, name, type)
+    Game.Game_Tag(tag_id, game_id)
+    User.User_Tag(user_id, tag_id, game_id)
+    Game.Comment(comment_id, title, content, recommend, date, trusted, interesting, user_id, game_id)
+    User.Comment_Rate(comment_id, user_id, trust, interested)
+Backend
+    Admin(admin_id, name, password)
+    game crud
+    user crud
+    item crud
+    tag crud
+    comment crud
+    visualization:
+          game sales
+          user game
+          game comment
+          ...etc

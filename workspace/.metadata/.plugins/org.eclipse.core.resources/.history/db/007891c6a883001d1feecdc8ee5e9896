@@ -1,0 +1,59 @@
+
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.naming.InitialContext;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpFilter;
+import javax.sql.DataSource;
+
+/**
+ * Servlet Filter implementation class LoginFilter
+ */
+@WebFilter("/Test")
+public class LoginFilter extends HttpFilter implements Filter {
+       
+    public LoginFilter() {
+        super();
+    }
+
+	public void destroy() {
+	}
+
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+
+		try{
+			InitialContext context = new InitialContext();
+			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/MSSQL");
+			Connection conn = ds.getConnection();
+			String sql = "SELECT * FROM [Vortex].[dbo].[Admin] WHERE name =? AND password =?";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1,request.getParameter("username"));
+			stmt.setString(2,request.getParameter("password"));
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				 sess = request.getSession();
+			}
+			conn.close();
+			
+		}catch(Exception e) {
+			
+		}
+
+		chain.doFilter(request, response);
+	}
+
+	public void init(FilterConfig fConfig) throws ServletException {
+		// TODO Auto-generated method stub
+	}
+
+}

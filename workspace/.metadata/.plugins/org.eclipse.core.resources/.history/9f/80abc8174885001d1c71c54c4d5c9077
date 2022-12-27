@@ -1,0 +1,72 @@
+package contoller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+
+import bean.UserBean;
+import service.UserServiceImpl;
+
+@WebServlet("/EditUserTable")
+public class EditUserTable extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    request.setCharacterEncoding("utf-8");
+	    
+	    response.setContentType("application/json");
+	    response.setCharacterEncoding("utf-8");
+	    PrintWriter writer = response.getWriter();
+	    response.setStatus(200);
+	    UserServiceImpl service = new UserServiceImpl();
+	    UserBean bean = new UserBean();
+	    bean.setEmail(request.getParameter("email"));
+	    bean.setGender(request.getParameter("gender"));
+	    bean.setImage(request.getParameter("file_temp"));
+	    bean.setUsername(request.getParameter("username"));
+	    bean.setPassword(request.getParameter("password"));
+//	    String[] dates = request.getParameter("regDay").replace("月",",").replace(" ", "").split(",");
+//	    bean.setRegDay(Date.valueOf(dates[2]+"-"+dates[1]+"-"+dates[0]));
+	    bean.setRegDay(Date.valueOf(request.getParameter("regDay")));
+	    List<UserBean> list= new ArrayList<>();
+	    list.add(bean);
+	    switch(request.getParameter("type")) {
+	    case "insert":
+		    try {
+				service.insertUser(list);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	    	break;
+	    case "update":
+	    	break;
+	    case "delete":
+	    	break;
+	    }
+	    try {
+			service.insertUser(list);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		Gson gson = new Gson();
+		writer.write(gson.toJson(bean));
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

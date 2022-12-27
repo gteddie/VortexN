@@ -1,0 +1,49 @@
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.JSONObject;
+/**
+ * Servlet implementation class JsonTest
+ */
+@WebServlet("/JsonTest")
+public class JsonTest extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public JsonTest() {
+        super();
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    String[] array = request.getParameterValues("array[]");
+	    request.setCharacterEncoding("utf8");
+	    response.setContentType("application/json");
+	    ArrayList<String> message = new ArrayList<String>();
+	    message.add("response message goes here");
+	    PrintWriter writer = response.getWriter();
+	    JSONObject obj = new JSONObject();
+	    obj.put("message",message); 
+	    response.setStatus(200);
+	    //System.out.println(obj.get("message"));
+	    Map map=new HashMap();
+	    int[] valA = {1,2,3};
+	    map.put("colA", {1,2,3});
+	    writer.append(obj.toString());
+	    writer.close();
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

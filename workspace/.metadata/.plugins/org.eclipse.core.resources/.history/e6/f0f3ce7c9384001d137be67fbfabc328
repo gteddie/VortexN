@@ -1,0 +1,18 @@
+package dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import bean.UserBean;
+
+public interface UserDao {
+	void insertUser(List<UserBean> empList) throws SQLException;
+
+	void deleteUserByNo(int[] empnos) throws SQLException;
+
+	void updateUser(List<UserBean> empList) throws SQLException;
+
+	List<UserBean> findUserByNo(int[] empnos) throws SQLException;
+
+	List<UserBean> findAllUser() throws SQLException;
+}

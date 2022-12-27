@@ -1,0 +1,18 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class AdminDaoImpl implements AdminDao {
+	private Connection conn;
+
+	public AdminDaoImpl(Connection conn) {
+		this.conn = conn;
+	}
+	@Override
+	public boolean findAdmin(String name, String pass) throws SQLException {
+		
+		return false;
+	}
+
+}

@@ -1,0 +1,19 @@
+package service;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import util.ConnectionFactory;
+public class AdminServiceImpl implements AdminService {
+
+	@Override
+	public void login(String name, String pass) {
+		try(Connection conn = ConnectionFactory.getConnection()){
+			
+		}catch(SQLException e) {
+			
+		}
+
+	}
+
+}

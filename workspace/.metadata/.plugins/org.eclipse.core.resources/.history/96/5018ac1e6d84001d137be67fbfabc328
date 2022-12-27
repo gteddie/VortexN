@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+let array = [1,2,3];
+$.ajax({
+    type : 'POST',
+    url : "URL",
+    data: {array: array},
+    success : function(response)
+    {
+        alert("Success "+response.message);
+    },
+    error : function(response)
+    {
+        alert("Error"+response.message);
+        console.log('Error');
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+package bean;
+
+import java.sql.Date;
+
+public class EmpBean implements java.io.Serializable {
+	private static final long serialVersionUID = 1L;
+	private int userId;
+	private String ename;
+	private Date hiredate;
+	private int salary;
+	private int deptno;
+	private String title;
+
+
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assests/css/controlPanel.css">
+    <title>員工資料管理</title>
+</head>
+<body>
+    <div id="FormContainer" class="form-conainer">
+        <form action="../InsertControl" method="post" id="insertForm">
+            <h2>上傳員工資料</h2>
+            <div id="insertFields">
+                <fieldset>
+                    <legend>員工資訊</legend>
+                    <div>
+                        <label>empno:</label>
+                        <input type="text" name="empno[]">
+                    </div>
+                    <div>
+                        <label>ename:</label>
+                        <input type="text" name="ename[]">
+                    </div>
+                    <div>
+                        <label>hiredate:</label>
+                        <input type="text" name="hiredate[]">
+                    </div>
+                    <div>
+                        <label>salary:</label>
+                        <input type="text" name="salary[]">
+                    </div>
+                    <div>
+                        <label>deptno:</label>
+                        <input type="text" name="deptno[]">
+                    </div>
+                    <div>
+                        <label>title:</label>
+                        <input type="text" name="title[]">
+                    </div>           
+                </fieldset>
+            </div>
+            <div style="width: 100%;" class="buttons">               
+                <button type="submit">新增資料</button>
+                <button type="button" id="addInsert">新增區塊</button>
+            </div>
+        </form>
+        <form action="../DeleteControl" method="post" id="deleteForm">
+            <h2>刪除員工資料</h2>
+            <div id="deleteFields">
+                <fieldset>
+                    <legend>員工編號</legend>
+                    <div>
+                        <input type="text" name="empnoDel[]">
+                    </div>         
+                </fieldset>
+            </div>
+            <div style="width: 100%;" class="buttons">
+                <button type="submit">刪除資料</button>
+                <button type="button" id="addDelete">新增編號</button>
+            </div>            
+        </form>
+        <form action="../SelectControl" method="post" id="selectForm">
+            <h2>查詢員工資料</h2>
+            <div id="selectFields">
+                <fieldset>
+                    <legend>員工編號</legend>
+                    <div>
+                        <input type="text" name="empnoSel[]">
+                    </div>         
+                </fieldset>
+            </div>
+            <div style="width: 100%;" class="buttons">
+                <button type="submit">查詢資料</button>
+                <button type="button" id="addSelect">新增編號</button>
+            </div>            
+        </form>
+        <form action="../GetUpdateData" method="post" id="updateForm">
+            <h2>修改員工資料</h2>
+            <div id="updateFields">
+                <fieldset>
+                    <legend>員工編號</legend>
+                    <div>
+                        <input type="text" name="empnoUp[]">
+                    </div>         
+                </fieldset>
+            </div>
+            <div style="width: 100%;" class="buttons">
+                <button type="submit">修改資料</button>
+                <button type="button" id="addUpdate">新增編號</button>
+            </div>            
+        </form>
+    </div>  
+    <script src="../assests/javascript/formControl.js"></script>
+</body>
+</html>

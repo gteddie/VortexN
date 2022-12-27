@@ -1,0 +1,13 @@
+package service;
+
+import org.apache.tomcat.dbcp.dbcp2.ConnectionFactory;
+
+public class AdminServiceImpl implements AdminService {
+
+	@Override
+	public void login(String name, String pass) {
+		ConnectionFactory
+
+	}
+
+}
