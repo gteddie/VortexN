@@ -1,6 +1,7 @@
 Vortex
-    User.User(user_id, username, password,gender,email, phone, registration_date)
-    Game.Game(game_id, name, type, release_date, intro, desc, hardware_requirement, adult, developer_id)
+    User.User(user_id, username, password,gender,email, phone, registration_date) 
+    Game.Game(game_id, name, type, release_date, intro, adult, developer_id)
+    Game.Info(game_id, desc, hardware_low, hardware_high)
     Game.Developer(developer_id, name, url)
     Game.Media(media_id, resource, resource_type, game_id) 
     User.Purchase(purchase_id, purchase_date, amount, game_id, user_id)
@@ -9,7 +10,7 @@ Vortex
     Game.Tag(tag_id, name, type)
     Game.Game_Tag(tag_id, game_id)
     User.User_Tag(user_id, tag_id, game_id)
-    Game.Comment(comment_id, title, content, recommend, date, trusted, interesting, user_id, game_id)
+    User.Comment(comment_id, title, content, recommend, date, trusted, interesting, user_id, game_id)
     User.Comment_Rate(comment_id, user_id, trust, interested)
 Backend
     Admin(admin_id, name, password)
@@ -23,3 +24,22 @@ Backend
           user game
           game comment
           ...etc
+
+priority
+    Game.Game(game_id, name, type, release_date, intro, adult, developer_id) ˇ
+    Game.Developer(developer_id, name, url) ˇ
+    Game.Media(media_id, resource, resource_type, game_id)ˇ
+    Game.Tag(tag_id, name, type)ˇ
+    Game.Game_Tag(tag_id, game_id) ˇ
+   
+    User.Purchase(purchase_id, purchase_date, amount, game_id, user_id)ˇ
+    User.ShoppingCart(user_id, game_id, amount)ˇ
+    Game.ItemPrice(Item_id, name, price, discount_id, game_id)ˇ
+    Discount(discount_id, amount, start_date, end_date)ˇ
+    
+    User.User_Tag(user_id, tag_id, game_id)ˇ
+    User.Comment(comment_id, title, content, recommend, date, trusted, interesting, user_id, game_id)ˇ
+    User.Comment_Rate(comment_id, user_id, trust, interested)ˇ
+
+
+Game.Info(game_id, desc, hardware_low, hardware_high)

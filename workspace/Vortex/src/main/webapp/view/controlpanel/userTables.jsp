@@ -59,20 +59,20 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-user"></i> User <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="userTable.jsp">Table Views</a></li>
-                      <li><a href="index2.html">Edit Tables</a></li>
+                      <li><a href="/Vortex/view/controlpanel/userTables.jsp">Table Views</a></li>
+                      <li><a href="/Vortex/view/controlpanel/userEdit.jsp">Edit Tables</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-gamepad"></i> Game <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.html">Table Views</a></li>
-                      <li><a href="index2.html">Edit Tables</a></li>
+                      <li><a href="/Vortex/view/controlpanel/gameTables.jsp">Table Views</a></li>
+                      <li><a href="/Vortex/view/controlpanel/gameEdit.jsp">Edit Tables</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-cart-shopping"></i> Purchase <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.html">Table Views</a></li>
-                      <li><a href="index2.html">Edit Tables</a></li>
+                      <li><a href="/Vortex/view/controlpanel/purchaseTables.jsp">Table Views</a></li>
+                      <li><a href="/Vortex/view/controlpanel/purchaseEdit.jsp">Edit Tables</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -82,9 +82,9 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-chart-column"></i> Charts <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="e_commerce.html">User Charts</a></li>
-                      <li><a href="projects.html">Game Charts</a></li>
-                      <li><a href="project_detail.html">Purchase Charts</a></li>
+                      <li><a href="/Vortex/view/controlpanel/userCharts.jsp">User Charts</a></li>
+                      <li><a href="/Vortex/view/controlpanel/gameCharts.jsp">Game Charts</a></li>
+                      <li><a href="/Vortex/view/controlpanel/purchaseCharts.jsp">Purchase Charts</a></li>
                     </ul>
                   </li>
                 </ul>

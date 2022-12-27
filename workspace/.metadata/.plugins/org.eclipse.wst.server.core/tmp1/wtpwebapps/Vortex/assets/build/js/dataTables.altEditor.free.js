@@ -358,6 +358,7 @@
                         }
 
                         if (typeof selectedValue !== 'object' && selectedValue !== null) {
+							if(selectedValue == null) selectedValue = "";
                             selectedValue = selectedValue.toString().trim();
                         }
 
