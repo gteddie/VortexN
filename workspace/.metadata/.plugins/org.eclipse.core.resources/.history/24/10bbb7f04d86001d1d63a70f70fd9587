@@ -1,0 +1,71 @@
+package bean;
+
+import java.io.Serializable;
+
+public class GameBean implements Serializable {
+	private static final long serialVersionUID = 1L;
+	private int gameId;
+	private String name;
+	private String type;
+	private date releaseDate;
+	private String intro;
+	private String adult;
+	private String developerId;
+
+	public String getGameId() {
+		return gameId;
+	}
+
+	public void setGameId(String gameId) {
+		this.gameId = gameId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getReleaseDate() {
+		return releaseDate;
+	}
+
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+
+	public String getIntro() {
+		return intro;
+	}
+
+	public void setIntro(String intro) {
+		this.intro = intro;
+	}
+
+	public String getAdult() {
+		return adult;
+	}
+
+	public void setAdult(String adult) {
+		this.adult = adult;
+	}
+
+	public String getDeveloperId() {
+		return developerId;
+	}
+
+	public void setDeveloperId(String developerId) {
+		this.developerId = developerId;
+	}
+
+}

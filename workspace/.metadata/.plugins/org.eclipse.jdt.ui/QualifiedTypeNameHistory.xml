@@ -13,4 +13,6 @@
     <fullyQualifiedTypeName name="org.json.JSONObject"/>
     <fullyQualifiedTypeName name="com.google.gson.Gson"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="tw.com.vortex.util.ConnectionFactory"/>
 </qualifiedTypeNameHistroy>

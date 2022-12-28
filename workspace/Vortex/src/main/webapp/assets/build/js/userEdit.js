@@ -47,8 +47,8 @@ $(document).ready(function() {
     render: function(data, type, row, meta) {
 /*        if (data) return "<img style='max-width:50px;max-height:50px;border-radius:50%;' src='data:image/jpeg;base64, "
         + data +"'></img>"; */
-        if (data) return "<img style='max-width:50px;max-height:50px;border-radius:50%;' src='"
-        + data +"'></img>"; 
+        if (data) return "<a download=\"image.jpg\" href='"+data+"'>"+"<img style='max-width:50px;max-height:50px;border-radius:50%;' src='"
+        + data +"'></img>"+"</a>"; 
     },
     disabled: true,
     "defaultContent": ""

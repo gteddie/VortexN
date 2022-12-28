@@ -1,0 +1,5 @@
+package tw.com.vortex.model.developer.bean;
+
+public class DeveloperBean {
+
+}

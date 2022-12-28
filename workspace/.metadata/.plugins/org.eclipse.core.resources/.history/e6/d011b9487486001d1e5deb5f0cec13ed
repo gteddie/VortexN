@@ -1,0 +1,10 @@
+package tw.com.vortex.model.developer.bean;
+
+import java.io.Serializable;
+
+public class DeveloperBean implements Serializable  {
+	private static final long serialVersionUID = 1L;
+	private int developerId;
+	private String name;
+	private String url;
+}

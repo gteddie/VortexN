@@ -7,13 +7,23 @@ GO
 
 SET QUOTED_IDENTIFIER ON
 GO
-
+/*Admin Table*/
+CREATE TABLE [dbo].[Admin](
+	[admin_id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](50) NOT NULL,
+	[password] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Admin] PRIMARY KEY CLUSTERED 
+(
+	[admin_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
 /*User table */
 CREATE TABLE [dbo].[User](
 	[user_id] [int] IDENTITY(1,1) NOT NULL,
-	[username] [nvarchar](50) NOT NULL UNIQUE,
-	[password] [nvarchar](50) NOT NULL,
-	[email] [nvarchar](50) NULL,
+	[username] [nvarchar](max) NOT NULL UNIQUE,
+	[password] [nvarchar](max) NOT NULL,
+	[email] [nvarchar](max) NULL,
 	[image] [nvarchar](max) NULL,
 	[registration_date] [date] NOT NULL,
 	[gender] [nchar](10) NULL,
@@ -27,8 +37,8 @@ GO
 /* Game Table */
 CREATE TABLE [dbo].[Game](
 	[game_id] [int] IDENTITY(1,1) NOT NULL,
-	[name] [nvarchar](50) NOT NULL,
-	[type] [nvarchar](50) NULL,
+	[name] [nvarchar](max) NOT NULL,
+	[type] [nvarchar](max) NULL,
 	[release_date] [date] NULL,
 	[intro] [nvarchar](max) NULL,
 	[adult] [nchar](10) NULL,
@@ -50,8 +60,8 @@ GO
 /*GameDeveloper Table */
 CREATE TABLE [dbo].[GameDeveloper](
 	[developer_id] [int] IDENTITY(1,1) NOT NULL,
-	[name] [nvarchar](50) NOT NULL,
-	[url] [nvarchar](50) NULL,
+	[name] [nvarchar](max) NOT NULL,
+	[url] [nvarchar](max) NULL,
  CONSTRAINT [PK_GameDeveloper] PRIMARY KEY CLUSTERED 
 (
 	[developer_id] ASC
@@ -63,7 +73,7 @@ GO
 CREATE TABLE [dbo].[GameMedia](
 	[media_id] [int] NOT NULL,
 	[resource] [nvarchar](max) NOT NULL,
-	[resource_type] [nvarchar](50) NULL,
+	[resource_type] [nvarchar](max) NULL,
 	[game_id] [int] NULL,
  CONSTRAINT [PK_GameMedia] PRIMARY KEY CLUSTERED 
 (
@@ -82,8 +92,8 @@ GO
 /*Tag Table */
 CREATE TABLE [dbo].[Tag](
 	[tag_id] [int] IDENTITY(1,1) NOT NULL,
-	[name] [nvarchar](50) NOT NULL,
-	[type] [nvarchar](50) NULL,
+	[name] [nvarchar](max) NOT NULL,
+	[type] [nvarchar](max) NULL,
  CONSTRAINT [PK_GameTag] PRIMARY KEY CLUSTERED 
 (
 	[tag_id] ASC
@@ -172,7 +182,7 @@ GO
 /*GameItemPrice Table*/
 CREATE TABLE [dbo].[GameItemPrice](
 	[item_id] [int] IDENTITY(1,1) NOT NULL,
-	[title] [nvarchar](50) NOT NULL,
+	[title] [nvarchar](max) NOT NULL,
 	[price] [int] NULL,
 	[discount_id] [int] NULL,
 	[game_id] [int] NOT NULL,
@@ -244,7 +254,7 @@ GO
 /*Comment Table */
 CREATE TABLE [dbo].[Comment](
 	[comment_id] [int] IDENTITY(1,1) NOT NULL,
-	[title] [nvarchar](50) NOT NULL,
+	[title] [nvarchar](max) NOT NULL,
 	[text] [nvarchar](max) NOT NULL,
 	[recommend] [nchar](10) NULL,
 	[date] [date] NOT NULL,
@@ -258,10 +268,24 @@ CREATE TABLE [dbo].[Comment](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
+
+ALTER TABLE [dbo].[Comment]  WITH CHECK ADD  CONSTRAINT [FK_Comment_Game] FOREIGN KEY([game_id])
+REFERENCES [dbo].[Game] ([game_id])
+GO
+
+ALTER TABLE [dbo].[Comment] CHECK CONSTRAINT [FK_Comment_Game]
+GO
+
+ALTER TABLE [dbo].[Comment]  WITH CHECK ADD  CONSTRAINT [FK_Comment_User] FOREIGN KEY([user_id])
+REFERENCES [dbo].[User] ([user_id])
+GO
+
+ALTER TABLE [dbo].[Comment] CHECK CONSTRAINT [FK_Comment_User]
+GO
 /* CommentScore */
 CREATE TABLE [dbo].[Comment](
 	[comment_id] [int] IDENTITY(1,1) NOT NULL,
-	[title] [nvarchar](50) NOT NULL,
+	[title] [nvarchar](max) NOT NULL,
 	[text] [nvarchar](max) NOT NULL,
 	[recommend] [nchar](10) NULL,
 	[date] [date] NOT NULL,

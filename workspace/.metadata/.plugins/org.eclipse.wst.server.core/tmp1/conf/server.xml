@@ -152,9 +152,9 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\Eddie\Desktop\新增資料夾 (2)\Vortex\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Eddie\Desktop\新增資料夾 (2)\Vortex\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Vortex" path="/Vortex" reloadable="true" source="org.eclipse.jst.jee.server:Vortex">
+      <Context docBase="C:\Users\Student\Desktop\Vortex\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Student\Desktop\Vortex\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Vortex" path="/Vortex" reloadable="true" source="org.eclipse.jst.jee.server:Vortex">
 	<Resource auth="Container" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" name="jdbc/MSSQL" password="sa123456" type="javax.sql.DataSource" url="jdbc:sqlserver://localhost:1433;trustServerCertificate=true" username="sa"/>
-</Context><Context docBase="C:\Users\Eddie\Desktop\新增資料夾 (2)\Vortex\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\Test" path="/Test" reloadable="true" source="org.eclipse.jst.jee.server:Test"/></Host>
+</Context></Host>
     </Engine>
   </Service>
 </Server>
