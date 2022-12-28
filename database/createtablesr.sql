@@ -21,7 +21,7 @@ GO
 /*User table */
 CREATE TABLE [dbo].[User](
 	[user_id] [int] IDENTITY(1,1) NOT NULL,
-	[username] [nvarchar](max) NOT NULL UNIQUE,
+	[username] [nvarchar](max) NOT NULL ,
 	[password] [nvarchar](max) NOT NULL,
 	[email] [nvarchar](max) NULL,
 	[image] [nvarchar](max) NULL,
@@ -71,7 +71,7 @@ GO
 
 /*GameMedia Table */
 CREATE TABLE [dbo].[GameMedia](
-	[media_id] [int] NOT NULL,
+	[media_id] [int] IDENTITY(1,1) NOT NULL,
 	[resource] [nvarchar](max) NOT NULL,
 	[resource_type] [nvarchar](max) NULL,
 	[game_id] [int] NULL,

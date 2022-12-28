@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="console"/>
+		<item key="selection" value="mainb"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="console"/>
-			<item value="render"/>
-			<item value="example"/>
-			<item value="example2"/>
-			<item value="Game"/>
-			<item value="game"/>
-			<item value="[Developer]"/>
+			<item value="mainb"/>
+			<item value="onEditRow"/>
+			<item value="_editRowCallback"/>
+			<item value="_editRowCallBack"/>
+			<item value="Waiting for"/>
+			<item value="wait"/>
+			<item value="waiting"/>
+			<item value="Image"/>
+			<item value="system"/>
 			<item value="user"/>
 			<item value="User"/>
-			<item value="System"/>
-			<item value="system"/>
-			<item value="ids"/>
-			<item value="update"/>
-			<item value="ondeleterow"/>
-			<item value="delete"/>
+			<item value="game"/>
+			<item value="Game"/>
+			<item value="console"/>
+			<item value="render"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Resource"/>
+			<item value="gameMedia"/>
+			<item value="GameMedia"/>
 			<item value="developertable"/>
 			<item value="gametable"/>
 			<item value="Developer"/>
@@ -37,9 +40,6 @@
 			<item value="Ids"/>
 			<item value="user"/>
 			<item value="User"/>
-			<item value="Vortex"/>
-			<item value="/Vortex/"/>
-			<item value="../assets/build"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

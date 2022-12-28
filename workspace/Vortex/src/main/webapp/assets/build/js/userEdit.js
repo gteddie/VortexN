@@ -61,7 +61,8 @@ $(document).ready(function() {
     },
     type: "file",
     title: "Avatar (base64 upload)",
-    "defaultContent": ""
+    "defaultContent": "",
+    visible: false
   }];
 
   var myTable;

@@ -1,0 +1,7 @@
+package tw.com.vortex.model.gamemedia.bean;
+
+import java.io.Serializable;
+
+public class GameMediaBean implements Serializable {
+
+}

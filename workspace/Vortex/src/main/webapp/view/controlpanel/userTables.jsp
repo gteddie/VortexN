@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+  <!DOCTYPE html>
+  <html lang="en">
+
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -23,9 +23,10 @@
     <!-- Datatables -->
     <link href="/Vortex/assets/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="/Vortex/assets/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-    <link href="/Vortex/assets/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="/Vortex/assets/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css"
+      rel="stylesheet">
     <link href="/Vortex/assets/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="/Vortex/assets/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">	
+    <link href="/Vortex/assets/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="/Vortex/assets/build/css/custom.min.css" rel="stylesheet">
   </head>
@@ -95,7 +96,8 @@
 
             <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="/Vortex/AdminLogout" style="width: 100%">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="/Vortex/AdminLogout"
+                style="width: 100%">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
@@ -113,7 +115,8 @@
 
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
-                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                    aria-expanded="false">
                     <img src="/Vortex/assets/build/images/user.jpg" alt="">
                     ${sessionScope.name}
                     <span class=" fa fa-angle-down"></span>
@@ -137,42 +140,42 @@
               <div class="title_left">
                 <h3>Overview</h3>
               </div>
-            </div>		
+            </div>
           </div>
-        <div class="clearfix"></div>
-        <div class="row"> 
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Users</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                    <!-- <p class="text-muted font-13 m-b-30">users of vortex</p> -->
-                    <table id="tableview" class="table table-striped table-bordered">
-                      <thead>
-                        <tr>
-                          <th>user_Id</th>
-                          <th>username</th>
-                          <th>password</th>
-                          <th>email</th>
-                          <th>image</th>
-                          <th>registration_date</th>
-                          <th>gender</th>
-                        </tr>
-                      </thead>
-                      <tbody></tbody>
-                    </table>
-                  </div>
+          <div class="clearfix"></div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Users</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <!-- <p class="text-muted font-13 m-b-30">users of vortex</p> -->
+                  <table id="tableview" class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>user_Id</th>
+                        <th>username</th>
+                        <th>password</th>
+                        <th>email</th>
+                        <th>image</th>
+                        <th>registration_date</th>
+                        <th>gender</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
                 </div>
               </div>
-              </div>        
+            </div>
+          </div>
         </div>
         <!-- /page content -->
 
@@ -214,6 +217,7 @@
     <script src="/Vortex/assets/vendors/pdfmake/build/vfs_fonts.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="/Vortex/assets/build/js/custom.min.js"></script>
-	<script src="/Vortex/assets/build/js/userTables.js"></script>
+    <script src="/Vortex/assets/build/js/userTables.js"></script>
   </body>
-</html>
+
+  </html>

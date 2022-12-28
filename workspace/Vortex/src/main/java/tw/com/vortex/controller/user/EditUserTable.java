@@ -58,7 +58,7 @@ public class EditUserTable extends HttpServlet {
 		case "update":
 			try {
 				bean.setUserId(Integer.parseInt(request.getParameter("userId")));
-				System.out.println("image:" + bean.getImage());
+//				System.out.println("image:" + bean.getImage());
 				list.add(bean);
 				service.updateUser(list);
 				bean.setImage(service.findUserById(new int[] { bean.getUserId() }).get(0).getImage());
@@ -78,7 +78,7 @@ public class EditUserTable extends HttpServlet {
 		}
 
 		Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
-		System.out.println(gson.toJson(list));
+//		System.out.println(gson.toJson(list));
 		writer.write(gson.toJson(list));
 	}
 

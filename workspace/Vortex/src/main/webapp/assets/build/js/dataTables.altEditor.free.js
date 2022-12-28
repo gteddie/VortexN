@@ -446,6 +446,8 @@
 
                 var checkFilesQueued = function() {
                     if (numFilesQueued == 0) {
+						console.log("rowdataarry in checkfilesqueued:");
+						console.log(rowDataArray);
                         that.onEditRow(that,
                             rowDataArray,
                             function(data,b,c,d,e){ that._editRowCallback(data,b,c,d,e); },

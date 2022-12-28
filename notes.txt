@@ -1,0 +1,1 @@
+2022-12-28 some file can't upload, change maxPostSize to -1 in both local and server directory solves the problem.

@@ -8,8 +8,7 @@ INSERT [dbo].[GameDeveloper] ([developer_id], [name], [url]) VALUES (2, N'Valve'
 GO
 INSERT [dbo].[GameDeveloper] ([developer_id], [name], [url]) VALUES (3, N'Activision', N'https://store.steampowered.com/publisher/Activision')
 GO
-INSERT [dbo].[GameDeveloper] ([developer_id], [name], [url]) VALUES (4, N'
-Rockstar Games', N'https://store.steampowered.com/publisher/rockstargames')
+INSERT [dbo].[GameDeveloper] ([developer_id], [name], [url]) VALUES (4, N'Rockstar Games', N'https://store.steampowered.com/publisher/rockstargames')
 GO
 INSERT [dbo].[GameDeveloper] ([developer_id], [name], [url]) VALUES (5, N'FacepunchStudios', N'https://store.steampowered.com/publisher/facepunch')
 GO
