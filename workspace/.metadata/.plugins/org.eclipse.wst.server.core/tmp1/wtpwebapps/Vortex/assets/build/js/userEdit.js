@@ -103,7 +103,7 @@ $(document).ready(function() {
             name: 'refresh'      // do not change name
         }],
     onAddRow: function(datatable, rowdata, success, error) {
-		rowdata["type"] = "insert";
+		rowdata["type_"] = "insert";
         $.ajax({
             // a tipycal url would be / with type='PUT'
             url: url_fun,
@@ -115,7 +115,7 @@ $(document).ready(function() {
     },
     onDeleteRow: function(datatable, rowdata, success, error) {
     	for (rowdata_ of rowdata){
-        rowdata_["type"] = "delete";
+        rowdata_["type_"] = "delete";
         $.ajax({
             // a tipycal url would be /{id} with type='DELETE'
             url: url_fun,
@@ -127,7 +127,7 @@ $(document).ready(function() {
       }
     },
     onEditRow: function(datatable, rowdata, success, error) {
-        rowdata["type"] = "update";
+        rowdata["type_"] = "update";
         $.ajax({
             // a tipycal url would be /{id} with type='POST'
             url: url_fun,

@@ -41,7 +41,7 @@ public class EditDeveloperTable extends HttpServlet {
 //		System.out.println("regday: " + request.getParameter("regDay"));
 		List<DeveloperBean> list = new ArrayList<>();
 //		System.out.println("type: " + request.getParameter("type"));
-		switch (request.getParameter("type")) {
+		switch (request.getParameter("type_")) {
 		case "insert":
 			try {
 				list.add(bean);

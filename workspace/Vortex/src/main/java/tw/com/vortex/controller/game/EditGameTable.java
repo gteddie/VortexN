@@ -46,7 +46,7 @@ public class EditGameTable extends HttpServlet {
 //		System.out.println("regday: " + request.getParameter("regDay"));
 		List<GameBean> list = new ArrayList<>();
 //		System.out.println("type: " + request.getParameter("type"));
-		switch (request.getParameter("type")) {
+		switch (request.getParameter("type_")) {
 		case "insert":
 			try {
 				list.add(bean);

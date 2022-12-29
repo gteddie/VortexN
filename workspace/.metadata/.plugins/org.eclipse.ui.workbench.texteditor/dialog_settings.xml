@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="mainb"/>
+		<item key="selection" value="delete"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="mainb"/>
-			<item value="onEditRow"/>
-			<item value="_editRowCallback"/>
-			<item value="_editRowCallBack"/>
-			<item value="Waiting for"/>
-			<item value="wait"/>
-			<item value="waiting"/>
-			<item value="Image"/>
-			<item value="system"/>
-			<item value="user"/>
-			<item value="User"/>
-			<item value="game"/>
-			<item value="Game"/>
-			<item value="console"/>
-			<item value="render"/>
+			<item value="delete"/>
+			<item value="type"/>
+			<item value="mybar"/>
+			<item value="Dough"/>
+			<item value="mybarChart"/>
+			<item value="bar"/>
+			<item value="my"/>
+			<item value="dough"/>
+			<item value="#Dough"/>
+			<item value="Dou"/>
+			<item value="init_charts"/>
+			<item value="custom.min.js"/>
+			<item value="do"/>
+			<item value="dou"/>
+			<item value="doug"/>
 		</list>
 		<list key="replacehistory">
+			<item value="rowdata[&quot;type_&quot;]"/>
+			<item value="type"/>
+			<item value="typeg"/>
+			<item value="gtype"/>
 			<item value="Resource"/>
 			<item value="gameMedia"/>
 			<item value="GameMedia"/>
@@ -36,17 +40,13 @@
 			<item value="[GameDeveloper]"/>
 			<item value="[Game"/>
 			<item value="game"/>
-			<item value="Game"/>
-			<item value="Ids"/>
-			<item value="user"/>
-			<item value="User"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1224"/>
-		<item key="DIALOG_Y_ORIGIN" value="348"/>
+		<item key="DIALOG_X_ORIGIN" value="868"/>
+		<item key="DIALOG_Y_ORIGIN" value="599"/>
 		<item key="DIALOG_WIDTH" value="369"/>
-		<item key="DIALOG_HEIGHT" value="442"/>
+		<item key="DIALOG_HEIGHT" value="440"/>
 		<item key="DIALOG_FONT_NAME" value="1|Microsoft JhengHei UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft JhengHei UI"/>
 	</section>
 </section>

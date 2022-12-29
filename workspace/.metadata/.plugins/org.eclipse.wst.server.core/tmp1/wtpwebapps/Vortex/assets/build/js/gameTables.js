@@ -8,7 +8,7 @@ $(document).ready(function() {
 				columns: [
 					{ data: "gameId" },
 					{ data: "name" },
-					{ data: "type", "defaultContent": "" },
+					{ data: "type", "defaultContent": "" ,width: "100px"},
 					{ data: "releaseDate", "defaultContent": "" },
 					{ data: "intro", "defaultContent": "" },
 					{ data: "adult", "defaultContent": "" },

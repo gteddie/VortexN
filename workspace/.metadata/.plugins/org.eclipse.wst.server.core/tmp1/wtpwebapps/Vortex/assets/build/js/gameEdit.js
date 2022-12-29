@@ -1,5 +1,20 @@
 $(document).ready(function() {
-
+  let developerIds = [];
+  $.ajax({
+	  url: "/Vortex/DeveloperTable",
+	  type: "GET",
+	  dataType: "json",
+	  success: function(response) {
+		  for(bean of response) {
+			  if(!developerIds.includes(bean.developerId)) {
+				  developerIds.push(bean.developerId)
+			  }
+		  }
+	  },
+	  error: function(error) {
+		  console.log(error);
+	  }
+  })
   var columnDefs = [{
     data: "gameId",
     title: "game_id",
@@ -20,6 +35,7 @@ $(document).ready(function() {
     type : "select",
     options : ['動作', '角色扮演','策略','冒險','模擬','運動和競速'],
     "defaultContent": "",
+    width: "100px"
 
   },
   {
@@ -46,7 +62,7 @@ $(document).ready(function() {
     data: "developerId",
     title: "developer_id",
     type : "select",
-    options : ['1', '2','3','4','5'],
+    options : developerIds,
     required: true,
     "defaultContent": ""
   }
@@ -90,7 +106,7 @@ $(document).ready(function() {
             name: 'refresh'      // do not change name
         }],
     onAddRow: function(datatable, rowdata, success, error) {
-		rowdata["type"] = "insert";
+		rowdata["type_"] = "insert";
         $.ajax({
             // a tipycal url would be / with type='PUT'
             url: url_fun,
@@ -102,7 +118,7 @@ $(document).ready(function() {
     },
     onDeleteRow: function(datatable, rowdata, success, error) {
     	for (rowdata_ of rowdata){
-        rowdata_["type"] = "delete";
+        rowdata_["type_"] = "delete";
         $.ajax({
             // a tipycal url would be /{id} with type='DELETE'
             url: url_fun,
@@ -114,7 +130,7 @@ $(document).ready(function() {
       }
     },
     onEditRow: function(datatable, rowdata, success, error) {
-        rowdata["type"] = "update";
+        rowdata["type_"] = "update";
         $.ajax({
             // a tipycal url would be /{id} with type='POST'
             url: url_fun,
@@ -190,7 +206,7 @@ $(document).ready(function() {
             name: 'refresh'      // do not change name
         }],
     onAddRow: function(datatable, rowdata, success, error) {
-		rowdata["type"] = "insert";
+		rowdata["type_"] = "insert";
         $.ajax({
             // a tipycal url would be / with type='PUT'
             url: url_fun,
@@ -202,7 +218,7 @@ $(document).ready(function() {
     },
     onDeleteRow: function(datatable, rowdata, success, error) {
     	for (rowdata_ of rowdata){
-        rowdata_["type"] = "delete";
+        rowdata_["type_"] = "delete";
         $.ajax({
             // a tipycal url would be /{id} with type='DELETE'
             url: url_fun,
@@ -214,7 +230,7 @@ $(document).ready(function() {
       }
     },
     onEditRow: function(datatable, rowdata, success, error) {
-        rowdata["type"] = "update";
+        rowdata["type_"] = "update";
         $.ajax({
             // a tipycal url would be /{id} with type='POST'
             url: url_fun,
@@ -236,6 +252,22 @@ $(document).ready(function() {
 	  }
 	  return url.protocol === "http:" || url.protocol === "https:";
 	}
+    let gameIds = [];
+    $.ajax({
+	    url: "/Vortex/GameTable",
+	    type: "GET",
+	    dataType: "json",
+	    success: function(response) {
+		    for(bean of response) {
+			    if(!gameIds.includes(bean.gameId)) {
+				    gameIds.push(bean.gameId)
+			    }
+		    }
+	    },
+	    error: function(error) {
+		    console.log(error);
+	    }
+    })
   var columnDefs = [{
     data: "mediaId",
     title: "media_id",
@@ -272,7 +304,7 @@ $(document).ready(function() {
     data: "gameId",
     title: "game_id",
     type : "select",
-    options : ['1', '2','3','4','5','6','7','8'],
+    options : gameIds,
     "defaultContent": ""
   },
   {
@@ -326,7 +358,7 @@ $(document).ready(function() {
             name: 'refresh'      // do not change name
         }],
     onAddRow: function(datatable, rowdata, success, error) {
-		rowdata["type"] = "insert";
+		rowdata["type_"] = "insert";
         $.ajax({
             // a tipycal url would be / with type='PUT'
             url: url_fun,
@@ -338,7 +370,7 @@ $(document).ready(function() {
     },
     onDeleteRow: function(datatable, rowdata, success, error) {
     	for (rowdata_ of rowdata){
-        rowdata_["type"] = "delete";
+        rowdata_["type_"] = "delete";
         $.ajax({
             // a tipycal url would be /{id} with type='DELETE'
             url: url_fun,
@@ -350,7 +382,7 @@ $(document).ready(function() {
       }
     },
     onEditRow: function(datatable, rowdata, success, error) {
-        rowdata["type"] = "update";
+        rowdata["type_"] = "update";
         $.ajax({
             // a tipycal url would be /{id} with type='POST'
             url: url_fun,
