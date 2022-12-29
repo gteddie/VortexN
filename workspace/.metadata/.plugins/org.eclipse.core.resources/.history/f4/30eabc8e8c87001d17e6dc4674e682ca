@@ -1,0 +1,28 @@
+package tw.com.vortex.model.table.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.function.Supplier;
+
+public class TableDao<T> {
+	private T bean;
+	private Supplier<T> supplier;
+	private Connection conn;
+	public TableDao(T bean,Connection conn) {
+		this.bean = bean;
+		this.conn = conn;
+	}
+	T createBean() {
+		return supplier.get();
+	}
+	public List<T> getWholeTable(List<T> beanList,String query) throws SQLException {
+		try (PreparedStatement stmt = conn.prepareStatement(query)){
+			ResultSet rs = stmt.executeQuery();
+			T bean_ = bean.clone();
+		}
+		return beanList;
+	}
+}

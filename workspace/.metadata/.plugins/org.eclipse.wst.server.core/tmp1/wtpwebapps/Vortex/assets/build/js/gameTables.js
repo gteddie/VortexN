@@ -8,7 +8,7 @@ $(document).ready(function() {
 				columns: [
 					{ data: "gameId" },
 					{ data: "name" },
-					{ data: "type", "defaultContent": "" ,width: "100px"},
+					{ data: "type", "defaultContent": "", width: "100px" },
 					{ data: "releaseDate", "defaultContent": "" },
 					{ data: "intro", "defaultContent": "" },
 					{ data: "adult", "defaultContent": "" },
@@ -106,28 +106,38 @@ $(document).ready(function() {
 			$("#tableview3").DataTable({
 				data: response,
 				columns: [
-					{ data: "mediaId", title: "media_id"},
-					
-					{ data: "resource",
-					  title: "resource",
-					  render: function(data, type, row, meta) {
-					      if (data) {
-							  console.log("if(data)");
-						      if (data.startsWith("data:")) {
-								  console.log("startsWith(data)");
-								  console.log(`<a download="image.${data.substring(data.indexOf("/") + 1, data.indexOf(";"))}"`+" href='"+data+"'>"+"<img style='max-width:150px;max-height:150px;' src='"
-				          		  + data +"'></img>"+"</a>") 
-							      return `<a download="image.${data.substring(data.indexOf("/") + 1, data.indexOf(";"))}"`+" href='"+data+"'>"+"<img style='max-width:150px;max-height:150px;' src='"
-				          		  + data +"'></img>"+"</a>";
-								 }else {
+					{ data: "mediaId", title: "media_id" },
+
+					{
+						data: "resource",
+						title: "resource",
+						render: function(data, type, row, meta) {
+							function isValidHttpUrl(string) {
+								let url;
+								try {
+									url = new URL(string);
+								} catch (_) {
+									return false;
+								}
+								return url.protocol === "http:" || url.protocol === "https:";
+							}
+							if (data) {
+								if (data.startsWith("data:")) {
+									return `<a download="image.${data.substring(data.indexOf("/") + 1, data.indexOf(";"))}"`
+										+ " href='" + data + "'>"
+										+ "<img style='max-width:150px;max-height:150px;' src='"
+										+ data + "'></img>" + "</a>";
+								} else if (isValidHttpUrl(data)) {
+									return `<a href="${data}" target="_blank">${data}</a>`;
+								} else {
 									return data;
-								 };
-						      };
-					  },
+								};
+							};
+						},
 						"defaultContent": ""
-					},	
-					{ data: "resourceType", title:"resource_type" },				
-					{ data: "gameId", title: "game_id"},
+					},
+					{ data: "resourceType", title: "resource_type" },
+					{ data: "gameId", title: "game_id" },
 
 				],
 				"autoWidth": false,

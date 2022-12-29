@@ -1,0 +1,9 @@
+package tw.com.vortex.model.table.dao;
+
+import java.util.List;
+
+public interface TableDao<T> {
+	List<T> getTable(); 
+		
+	
+}

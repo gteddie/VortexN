@@ -1,0 +1,45 @@
+package tw.com.vortex.util;
+
+import java.util.GregorianCalendar;
+import java.util.Random;
+
+public class RandomInsert {
+	public static void insertUsers(int counts) {
+		while(counts > 0) {
+			String username = getSaltString();
+			String password = getSaltString();
+			String email = getSaltString()+"@gmail.com";
+			
+			counts--;
+		}
+
+	}
+	private static String getSaltString() {
+        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 10) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        String saltStr = salt.toString();
+        return saltStr;
+
+    }
+    public static void main(String[] args) {
+
+        GregorianCalendar gc = new GregorianCalendar();
+        int year = randBetween(2015, 2022);
+        gc.set(gc.YEAR, year);
+        int dayOfYear = randBetween(1, gc.getActualMaximum(gc.DAY_OF_YEAR));
+
+        gc.set(gc.DAY_OF_YEAR, dayOfYear);
+
+        System.out.println(gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH));
+
+    }
+
+    public static int randBetween(int start, int end) {
+        return start + (int)Math.round(Math.random() * (end - start));
+    }
+}

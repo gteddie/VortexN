@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="delete"/>
+		<item key="selection" value="Doughnut"/>
 		<item key="wrap" value="true"/>
-		<item key="casesensitive" value="true"/>
+		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="delete"/>
-			<item value="type"/>
-			<item value="mybar"/>
-			<item value="Dough"/>
-			<item value="mybarChart"/>
+			<item value="doughnut"/>
+			<item value="lineCh"/>
+			<item value="lineC"/>
+			<item value="line"/>
+			<item value="barC"/>
+			<item value="lineChart"/>
 			<item value="bar"/>
-			<item value="my"/>
-			<item value="dough"/>
-			<item value="#Dough"/>
-			<item value="Dou"/>
-			<item value="init_charts"/>
-			<item value="custom.min.js"/>
-			<item value="do"/>
-			<item value="dou"/>
-			<item value="doug"/>
+			<item value="#barChar"/>
+			<item value="#barChart"/>
+			<item value="#line"/>
+			<item value="session"/>
+			<item value="legend"/>
+			<item value="legends"/>
+			<item value="chart.js"/>
+			<item value="pieChart"/>
 		</list>
 		<list key="replacehistory">
 			<item value="rowdata[&quot;type_&quot;]"/>
