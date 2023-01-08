@@ -1,5 +1,0 @@
-package dao;
-
-public interface AdminDao {
-	boolean findAdmin(String name, String pass);
-}

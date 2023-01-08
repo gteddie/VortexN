@@ -1,7 +1,0 @@
-package tw.com.vortex.util;
-
-public class RandomInsert {
-	public static void insertUsers() {
-		
-	}
-}

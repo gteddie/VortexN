@@ -1992,9 +1992,9 @@ function init_charts() {
 	console.log('init_charts');
 
 
-	Chart.defaults.global.legend = {
+/*	Chart.defaults.global.legend = {
 		enabled: false
-	};
+	};*/
 
 
 
@@ -2166,23 +2166,13 @@ function init_charts() {
 	// Line chart
 
 	if ($('#lineChart').length) {
-		function toMonthName(monthNumber) {
-  			const date = new Date();
-  			date.setMonth(monthNumber - 1);
-  			return date.toLocaleDateString('en-US', {month: 'long'});
-		}	
-		let maledata = [],
-			femaledata =[],
-			label_ = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-			data_ = {};
-			for (let i = 1; i <= 12; i++) {
-				data_[i] = [0,0];
-			}
-		$.ajax({
-			url: "/Vortex/UserTable",
-			type: "GET",
-			dataType: "json",
-			success: function(response) {
+		let getUpdate = (response) => {
+			let maledata = [],
+				femaledata =[],
+				data_ = {};
+				for (let i = 1; i <= 12; i++) {
+					data_[i] = [0,0];
+				}
 				for (bean of response) {
 					let month = Number(bean.regDay.split("-")[1]);
 					
@@ -2196,7 +2186,16 @@ function init_charts() {
 					maledata.push(data_[prop][0]);
 					femaledata.push(data_[prop][1]);
 				}
-				console.log(label_);
+				return [maledata, femaledata];
+			
+		} 
+		$.ajax({
+			url: "/Vortex/UserTable",
+			type: "GET",
+			dataType: "json",
+			success: function(response) {
+				let label_ = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+				let data_ = getUpdate(response);
 				var ctx = document.getElementById("lineChart");
 				var lineChart = new Chart(ctx, {
 					type: 'line',
@@ -2211,7 +2210,7 @@ function init_charts() {
 							pointHoverBackgroundColor: "#97CBFF",
 							pointHoverBorderColor: "#D2E9FF",
 							pointBorderWidth: 1,
-							data: maledata
+							data: data_[0]
 						}, {
 							label: "# of female user",
 							backgroundColor: "rgba(255, 81, 81, 0.3)",
@@ -2221,13 +2220,16 @@ function init_charts() {
 							pointHoverBackgroundColor: "#FF9797",
 							pointHoverBorderColor: "#FFECEC",
 							pointBorderWidth: 1,
-							data: femaledata
+							data: data_[1]
 						}],
 						
 					},
 				});				
 		    },
-		    error: (err) => console.log(err)
+		    error: (err) => console.log(err),
+		    complete: function() {
+				
+			}
 		})
 
 
@@ -2249,7 +2251,7 @@ function init_charts() {
 				for (bean of response) {
 					let year = bean.regDay.split("-")[0];
 					if (!data_.hasOwnProperty(year)) data_[year] = [0, 0];
-					console.log(bean.gender);
+					/*console.log(bean.gender);*/
 					if (bean.gender.trim() === "male") {
 						data_[year][0] += 1;
 					} else if (bean.gender.trim() === "female") {
@@ -2314,7 +2316,7 @@ function init_charts() {
 			success: function(response) {
 				console.log('success');
 				for (bean of response) {
-					console.log(bean.type);
+					/*console.log(bean.type);*/
 					if (gameType.hasOwnProperty(bean.type)) {
 						gameType[bean.type] += 1;
 					} else {

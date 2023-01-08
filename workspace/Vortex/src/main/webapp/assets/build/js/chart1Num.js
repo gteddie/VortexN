@@ -19,73 +19,86 @@ function animateValue(id, start, end, step, duration) {
 		}
 	}, stepTime);
 }
-
-$.ajax({
-	url: "/Vortex/UserTable",
-	method: "POST",
-	datatype: "json",
-	success: function(response) {
-		let totalUsers = 0,
-			totalMales = 0,
-			totalFemales = 0;
-		for (bean of response) {
-			totalUsers += 1;
-			if (bean.gender.trim() === "male") totalMales += 1;
-			if (bean.gender.trim() === "female") totalFemales += 1;
+function dynamicCharts() {	
+	$.ajax({
+		url: "/Vortex/UserTable",
+		method: "POST",
+		datatype: "json",
+		success: function(response) {
+			let initUsers = Number($("#userCounts").text()),
+			    initMales = Number($("#maleCounts").text()),
+				initFemales = Number($("#femaleCounts").text()),
+				totalUsers = 0,
+				totalMales = 0,
+				totalFemales = 0;
+			for (bean of response) {
+				totalUsers += 1;
+				if (bean.gender.trim() === "male") totalMales += 1;
+				if (bean.gender.trim() === "female") totalFemales += 1;
+			}
+			animateValue("userCounts", initUsers, totalUsers, 1, 1000);
+			animateValue("maleCounts", initMales, totalMales, 1, 1000);
+			animateValue("femaleCounts", initFemales, totalFemales, 1, 1000);
+		},
+		error: (err) => {
+			console.log(err);
 		}
-		animateValue("userCounts", 0, totalUsers, 1, 1000);
-		animateValue("maleCounts", 0, totalMales, 1, 1000);
-		animateValue("femaleCounts", 0, totalFemales, 1, 1000);
-	},
-	error: (err) => {
-		console.log(err);
-	}
-})
-$.ajax({
-	url: "/Vortex/GameTable",
-	method: "POST",
-	datatype: "json",
-	success: function(response) {
-		let totalGames = 0;
-		for (bean of response) {
-			totalGames += 1;
+	})
+	$.ajax({
+		url: "/Vortex/GameTable",
+		method: "POST",
+		datatype: "json",
+		success: function(response) {
+			let totalGames = 0,
+				initGames = Number($("#gameCounts").text());
+			for (bean of response) {
+				totalGames += 1;
+			}
+			animateValue("gameCounts", initGames, totalGames, 1, 1000);
+	
+		},
+		error: (err) => {
+			console.log(err);
 		}
-		animateValue("gameCounts", 0, totalGames, 1, 1000);
-
-	},
-	error: (err) => {
-		console.log(err);
-	}
-})
-$.ajax({
-	url: "/Vortex/DeveloperTable",
-	method: "POST",
-	datatype: "json",
-	success: function(response) {
-		let	totalDevelopers = 0;
-		for (bean of response) {
-			totalDevelopers += 1;
+	})
+	$.ajax({
+		url: "/Vortex/DeveloperTable",
+		method: "POST",
+		datatype: "json",
+		success: function(response) {
+			let	totalDevelopers = 0,
+				initDevelopers = Number($("#developerCounts").text());
+			for (bean of response) {
+				totalDevelopers += 1;
+			}
+			animateValue("developerCounts",initDevelopers, totalDevelopers, 1, 1000);
+	
+		},
+		error: (err) => {
+			console.log(err);
 		}
-		animateValue("developerCounts", 0, totalDevelopers, 1, 1000);
-
-	},
-	error: (err) => {
-		console.log(err);
-	}
-})
-$.ajax({
-	url: "/Vortex/GameMediaTable",
-	method: "POST",
-	datatype: "json",
-	success: function(response) {
-		let	totalMedia = 0;
-		for (bean of response) {
-			totalMedia += 1;
+	})
+	$.ajax({
+		url: "/Vortex/GameMediaTable",
+		method: "POST",
+		datatype: "json",
+		success: function(response) {
+			let	totalMedia = 0,
+			    initMedia = Number($("#gameMediaCounts").text());
+			console.log(initMedia);
+			for (bean of response) {
+				totalMedia += 1;
+			}
+			animateValue("gameMediaCounts", initMedia, totalMedia, 1, 1000);
+	
+		},
+		error: (err) => {
+			console.log(err);
 		}
-		animateValue("gameMediaCounts", 0, totalMedia, 1, 1000);
-
-	},
-	error: (err) => {
-		console.log(err);
-	}
+	})
+}
+$(document).ready(()=>{
+	dynamicCharts();
+	setInterval(dynamicCharts, 10000);
 })
+
